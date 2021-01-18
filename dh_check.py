@@ -1,16 +1,17 @@
 # I always forget how DH works so I wrote this
 # little bit of code to remember.
+import random
 print("First, both Bob and Alice agree publically on a prime modulos and")
 print("a generator.")
 prime = input("[Optional] Enter a custom prime, leave black for default: ")
 generator = input("[Optional] Enter a custom generator number, leave black for default: ")
 
-if len(prime) < 1:
+if len(prime) == 0:
     p = 48112959837082048697
 else:
     p = int(prime)
-if len(generator) < 1:
-    g = 5915587277
+if len(generator) == 0:
+    g = random.randint(1000000000,9999999999)
 else:
     g = int(generator)
 
@@ -22,7 +23,7 @@ print("that private number to generate a public number to share")
 print("with Bob.")
 alice_priv = int(input("Select a random private number for Alice: "))
 alice_public = pow(g,alice_priv) % p
-print(f"Rasing {g} to the power of {alice_priv} mod{p} gives us Alice's public number, {alice_public}.\n\n")
+print(f"Raising {g} to the power of {alice_priv} mod{p} gives us Alice's public number, {alice_public}.\n\n")
 
 ## Bob start keygen
 print("Now Bob runs a similar operation, using his own randomly generated")
