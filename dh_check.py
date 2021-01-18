@@ -43,6 +43,6 @@ print(f"Checking... Alice believes the shared secret is {alice_shared}")
 print(f"Checking... Bob believes the shared secret is {bob_shared}")
 #
 if (alice_shared == bob_shared):
-    print("The shared secrets match!")
+    print("The shared secrets match!\n\nLearn more about how this trick works at https://www.youtube.com/watch?v=M-0qt6tdHzk")
 else:
     print("Something went wrong, shared secrets do not match.")
